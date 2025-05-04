@@ -36,7 +36,7 @@ fun inputAndFindMember(): Member? {
     val input = readLine()!!.split(Regex("[\\s,]+"))
 
     if (input.size != 2) {
-        println("이름과 id를 입력해주세요. (ex) 김서진 9000")
+        println("이름과 회원번호를 입력해주세요. (ex) 김서진 9000")
         return null
     }
 
@@ -44,7 +44,7 @@ fun inputAndFindMember(): Member? {
     val id = input[1].toIntOrNull()
 
     if (id == null) {
-        println("id는 숫자로 입력해아합니다.(ex) 김서진 9000")
+        println("회원번호는 숫자로 입력해아합니다.(ex) 김서진 9000")
         return null
     }
     val found = findMember(name, id)
@@ -60,7 +60,7 @@ fun inputAndFindMember(): Member? {
 
 
 //회원X -> 신규회원가입 (이름입력 시 id 부여 (기존 id의 마지막숫자 +1)
-fun addmember() {
+fun addMember() {
     val member = inputAndFindMember()
 
     if(member == null) {
@@ -72,7 +72,7 @@ fun addmember() {
 
         AllMember.members.add(newMember)
 
-        println("회원가입이 완료되었습니다. 지급된 아이디 분실에 유의해주세요.")
+        println("회원가입이 완료되었습니다. 지급된 회원번호 분실에 유의해주세요.")
         println("회원정보:")
         newMember.PrintMember()
     }else{
