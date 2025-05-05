@@ -49,10 +49,10 @@ fun inputAndFindMember(): Member? {
     }
     val found = findMember(name, id)
 
-    if(found != null){
+    if (found != null) {
         println("회원이 확인되었습니다.")
         found.PrintMember()
-    }else{
+    } else {
         println("회원이 아닙니다.")
     }
     return found
@@ -63,7 +63,7 @@ fun inputAndFindMember(): Member? {
 fun addMember() {
     val member = inputAndFindMember()
 
-    if(member == null) {
+    if (member == null) {
         println("회원가입을 시작합니다.\n성함을 입력해주세요")
         val name = readLine() ?: return
 
@@ -75,7 +75,7 @@ fun addMember() {
         println("회원가입이 완료되었습니다. 지급된 회원번호 분실에 유의해주세요.")
         println("회원정보:")
         newMember.PrintMember()
-    }else{
+    } else {
         println("이미 가입된 회원입니다.")
     }
 }
